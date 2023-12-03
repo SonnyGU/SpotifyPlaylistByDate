@@ -58,7 +58,7 @@ for name in music_list:
         uri = found["tracks"]["items"][0]["uri"]
         song_uri_list.append(uri)
     except IndexError:
-        print(f"{name} Not Found ")
+        print(f"Song title: '{name}' Not Found ")
 
 # Create a new private playlist for the user with the songs from the specified year
 playlist = sp.user_playlist_create(user=user_id, name=f"{date_year} Billboard 100", public=False)
