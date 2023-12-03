@@ -53,7 +53,7 @@ date_year = user_date.split("-")[0]
 # Search for each song on Spotify and add its URI to the list
 for name in music_list:
     found = sp.search(q=f"track:{name} year:{date_year}", type="track")
-    print(found)
+    #print(found)
     try:
         uri = found["tracks"]["items"][0]["uri"]
         song_uri_list.append(uri)
@@ -62,7 +62,7 @@ for name in music_list:
 
 # Create a new private playlist for the user with the songs from the specified year
 playlist = sp.user_playlist_create(user=user_id, name=f"{date_year} Billboard 100", public=False)
-# print(playlist) # test print
+#print(playlist) # test print
 
 # Add the found songs to the newly created playlist
 sp.playlist_add_items(playlist_id=playlist["id"], items=song_uri_list)
